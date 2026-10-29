@@ -14,6 +14,7 @@ export default {
       fontFamily: {
         sans: ['Geist', 'system-ui', 'sans-serif'],
         display: ['"Bricolage Grotesque"', 'Geist', 'system-ui', 'sans-serif'],
+        serif: ['"Instrument Serif"', 'Georgia', 'serif'],
       },
       maxWidth: { content: '1200px' },
       keyframes: {
@@ -27,12 +28,15 @@ export default {
           '50%': { transform: 'scaleY(1)' },
         },
         ping: { '75%, 100%': { transform: 'scale(2.2)', opacity: '0' } },
+        marquee: { from: { transform: 'translateX(0)' }, to: { transform: 'translateX(-50%)' } },
       },
       animation: {
         drift: 'drift 22s ease-in-out infinite',
         'drift-slow': 'drift 30s ease-in-out infinite reverse',
         bar: 'bar 1.1s ease-in-out infinite',
         ping: 'ping 1.6s cubic-bezier(0, 0, 0.2, 1) infinite',
+        marquee: 'marquee 40s linear infinite',
+        'marquee-reverse': 'marquee 46s linear infinite reverse',
       },
     },
   },

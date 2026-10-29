@@ -2,6 +2,7 @@ import { motion } from 'framer-motion'
 import { skills } from '@/data/skills'
 import { SectionHeading } from '@/components/ui/SectionHeading'
 import { SpotlightCard } from '@/components/ui/SpotlightCard'
+import { Marquee } from '@/components/ui/Marquee'
 import { fadeUp, stagger, viewport } from '@/lib/motion'
 
 const chip = {
@@ -17,6 +18,10 @@ export function Skills() {
         title="Skills"
         description="The tools I reach for across the stack, from the interface to the database, payments and AI."
       />
+      <div className="-mx-4 mb-12 space-y-3 sm:-mx-6 lg:-mx-8">
+        <Marquee items={['React 19', 'TypeScript', 'Next.js 15', 'Tailwind CSS', 'Framer Motion', 'TanStack Query', 'Redux Toolkit', 'Vite', 'Zod']} />
+        <Marquee reverse items={['FastAPI', 'Node.js', 'PostgreSQL', 'pgvector', 'Redis', 'Celery', 'WebSockets', 'OpenAI', 'Whisper', 'Docker', 'AWS', 'Solidity']} />
+      </div>
       <motion.div
         initial="hidden"
         whileInView="show"

@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { AnimatePresence, motion } from 'framer-motion'
 import { ArrowUpRight, Check, Copy, Mail } from 'lucide-react'
+import { ThinkingOrb } from 'thinking-orbs'
 import { profile, socials } from '@/data/profile'
 import { AnimatedText } from '@/components/ui/AnimatedText'
 import { Reveal } from '@/components/ui/Reveal'
@@ -26,6 +27,9 @@ export function Contact() {
           aria-hidden="true"
           className="pointer-events-none absolute left-1/2 top-0 h-64 w-[70%] -translate-x-1/2 -translate-y-1/2 rounded-full bg-gradient-to-r from-amber/30 via-violet/30 to-sky/30 blur-3xl"
         />
+        <div className="relative mx-auto mb-8 grid h-20 w-20 place-items-center rounded-3xl border border-white/10 bg-black/30">
+          <ThinkingOrb state="composing" size={64} theme="dark" color="#c4b5fd" />
+        </div>
         <AnimatedText
           as="h2"
           id="contact-title"

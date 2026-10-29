@@ -1,7 +1,8 @@
 # Revanth Kasula — portfolio
 
 React 18 + TypeScript + Vite, styled with Tailwind CSS, animated with Framer Motion,
-smooth scrolling by Lenis. Deployed to GitHub Pages on every push to `main`.
+smooth scrolling by Lenis, a three.js particle orb in the hero and
+[thinking-orbs](https://libraries.dev/orbs) on the project cards. Deployed to GitHub Pages on every push to `main`.
 
 ```bash
 npm install
@@ -15,11 +16,13 @@ npm run preview    # serve the production build
 ```
 src/
 ├── components/
-│   ├── layout/      Navbar, Footer, Background, ScrollProgress
-│   ├── sections/    Hero, About, Projects, Experience, Skills, Contact
-│   └── ui/          AnimatedText, RotatingText, Reveal, SpotlightCard, Button, SectionHeading
+│   ├── layout/      Navbar, Footer, Background, ScrollProgress, Preloader
+│   ├── sections/    Hero, Manifesto, About, Projects, Experience, Skills, Contact
+│   ├── three/       ParticleOrb (WebGL, lazy-loaded)
+│   └── ui/          AnimatedText, KineticText, ScrambleText, RotatingText, Marquee,
+│                    Reveal, SpotlightCard, TiltCard, Button, SectionHeading
 ├── data/            profile, projects, experience, skills  ← edit content here
-├── hooks/           useSmoothScroll, useActiveSection
+├── hooks/           useSmoothScroll, useActiveSection, useMediaQuery
 ├── lib/             motion presets, cn helper
 ├── styles/          globals.css (Tailwind layers, glass utilities)
 └── types/           shared TypeScript types

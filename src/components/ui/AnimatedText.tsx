@@ -14,6 +14,8 @@ interface AnimatedTextProps {
   delay?: number
   /** Play on mount instead of when scrolled into view. */
   immediate?: boolean
+  /** With `immediate`, hold the animation until this turns true. */
+  play?: boolean
 }
 
 const container = (delay: number, by: 'letter' | 'word'): Variants => ({
@@ -30,12 +32,12 @@ const piece: Variants = {
  * Text that rises out of a mask piece by piece. Screen readers get the
  * plain string; the split pieces are hidden from them.
  */
-export function AnimatedText({ text, id, as = 'p', className, by = 'word', delay = 0, immediate }: AnimatedTextProps) {
+export function AnimatedText({ text, id, as = 'p', className, by = 'word', delay = 0, immediate, play = true }: AnimatedTextProps) {
   const MotionTag = motion[as]
   const words = text.split(' ')
 
   const trigger = immediate
-    ? { initial: 'hidden', animate: 'show' }
+    ? { initial: 'hidden', animate: play ? 'show' : 'hidden' }
     : { initial: 'hidden', whileInView: 'show', viewport }
 
   return (
